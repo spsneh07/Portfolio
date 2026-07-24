@@ -3,6 +3,7 @@
 import { SectionHeading } from "./SectionHeading";
 import { Timeline } from "./Timeline";
 import { education } from "@/lib/data";
+import { GraduationCap } from "lucide-react";
 
 export function Education() {
   return (
@@ -15,6 +16,7 @@ export function Education() {
             title: education.degree,
             subtitle: `${education.school}, ${education.campus}`,
             description: `CGPA: ${education.cgpa} / 10`,
+            icon: GraduationCap,
           },
         ]}
       />

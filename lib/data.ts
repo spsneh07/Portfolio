@@ -27,12 +27,12 @@ export const experience = [
     location: "Pune, India",
     period: "May 2026 – Jul 2026",
     points: [
-      "Contributed to an aircraft engine predictive maintenance initiative using the NASA C-MAPSS dataset",
-      "Cleaned and processed multivariate sensor data; ran EDA with Pandas, NumPy, and Matplotlib",
-      "Built, benchmarked, and reported ML/DL model performance (RMSE, MAE, MSE, R²) for RUL prediction",
-      "Iteratively tuned model architectures and hyperparameters across experimental runs to improve accuracy",
+      "Engineered an end-to-end machine learning pipeline for time-series forecasting and regression on industrial datasets.",
+      "Cleaned and processed multivariate sensor data; conducted rigorous Exploratory Data Analysis (EDA) using Pandas and NumPy.",
+      "Architected, benchmarked, and optimized both classical ML and deep learning models (ANN, CNN, LSTM).",
+      "Iteratively tuned model hyperparameters to maximize evaluation metrics (RMSE, MAE, R²) and improve generalization.",
     ],
-    tags: ["Python", "TensorFlow", "Keras", "Time Series", "Predictive Maintenance"],
+    tags: ["Python", "TensorFlow", "Keras", "Deep Learning", "Data Engineering"],
   },
   {
     role: "Full Stack Developer Intern",
@@ -40,8 +40,9 @@ export const experience = [
     location: "Remote",
     period: "May 2025 – Jul 2025",
     points: [
-      "Shipped full-stack features for SynergyHub using the MERN stack",
-      "Built and integrated REST APIs connecting the frontend to backend services",
+      "Designed and shipped full-stack features for SynergyHub, accelerating user engagement.",
+      "Built and integrated scalable REST APIs connecting the React frontend to Node.js backend services.",
+      "Ensured robust database operations and seamless data flow using MongoDB.",
     ],
     tags: ["React", "Node.js", "Express.js", "MongoDB", "REST APIs"],
   },
@@ -49,56 +50,91 @@ export const experience = [
 
 export const projects = [
   {
-    title: "Aircraft Engine Predictive Maintenance",
-    description:
-      "End-to-end Remaining Useful Life (RUL) prediction pipeline on the NASA C-MAPSS turbofan degradation dataset — seven models spanning classical ML and deep learning, benchmarked head-to-head.",
-    tech: ["Python", "Scikit-learn", "TensorFlow", "Keras", "LSTM", "GRU", "CNN"],
-    highlight:
-      "Built 7 models — Linear Regression, Random Forest, ANN, CNN, RNN, LSTM, GRU — benchmarked on RMSE, MAE, MSE, R²",
+    title: "Intelligent Fault Classification System",
+    description: "An advanced machine learning classification system designed to detect and categorize mechanical anomalies in real-time sensor streams.",
+    problemSolved: "Traditional industrial monitoring relies on manual inspections or simple thresholds, leading to unexpected failures.",
+    features: [
+      "Real-time sensor data processing",
+      "Ensemble classification (Random Forest & Gradient Boosting)",
+      "Automated feature extraction pipelines"
+    ],
+    outcome: "Achieved high classification accuracy, demonstrating reliability in complex industrial fault-detection settings.",
+    tech: ["Python", "Scikit-learn", "NumPy", "Pandas"],
     github: "https://github.com/spsneh07",
     demo: "",
     featured: true,
+    status: "Completed",
+    image: "gradient-1", // Placeholder for dynamic UI gradients
   },
   {
-    title: "Bearing Fault Classification",
-    description:
-      "Classification system for detecting bearing faults from sensor data, comparing ensemble methods for reliability in industrial fault-detection settings.",
-    tech: ["Python", "Scikit-learn", "NumPy", "Pandas", "Matplotlib"],
-    highlight: "Random Forest & Gradient Boosting classifiers, evaluated and compared",
+    title: "Modern Banking Architecture",
+    description: "A secure, server-rendered full-stack banking application handling complex account management and transaction workflows.",
+    problemSolved: "Legacy banking apps often suffer from poor UX and slow client-side rendering.",
+    features: [
+      "End-to-end transaction workflows",
+      "Type-safe frontend architecture",
+      "Server-side rendering for optimal performance",
+      "Secure authentication flows"
+    ],
+    outcome: "Delivered a highly performant, accessible, and responsive financial dashboard.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/spsneh07",
+    demo: "",
+    featured: true,
+    status: "Active Development",
+    image: "gradient-2",
+  },
+  {
+    title: "Predictive Lifecycle Modeling",
+    description: "Comprehensive Remaining Useful Life (RUL) prediction pipeline utilizing NASA's C-MAPSS turbofan degradation dataset.",
+    problemSolved: "Optimizing maintenance schedules requires accurate forecasting of equipment degradation.",
+    features: [
+      "Multivariate time-series forecasting",
+      "7 benchmarked models spanning ML and DL",
+      "Hyperparameter tuning and cross-validation"
+    ],
+    outcome: "Successfully benchmarked LSTM, GRU, and CNN architectures against classical ML baselines on strict evaluation metrics.",
+    tech: ["TensorFlow", "Keras", "LSTM", "GRU", "CNN"],
     github: "https://github.com/spsneh07",
     demo: "",
     featured: false,
-  },
-  {
-    title: "Modern Banking Application",
-    description:
-      "Full-stack banking application handling account and transaction workflows, built with a type-safe frontend and server-rendered architecture.",
-    tech: ["React", "Next.js", "TypeScript"],
-    highlight: "End-to-end account & transaction workflows",
-    github: "https://github.com/spsneh07",
-    demo: "",
-    featured: false,
+    status: "Completed",
+    image: "gradient-3",
   },
 ];
 
-export const skills = {
-  Languages: ["C++", "Java", "Python", "JavaScript", "TypeScript"],
-  Frameworks: ["React", "Next.js", "Node.js", "Express.js", "Spring Boot", "Flutter"],
-  "AI / ML": [
-    "Machine Learning",
-    "Deep Learning",
-    "Scikit-learn",
-    "TensorFlow",
-    "Keras",
-    "NumPy",
-    "Pandas",
-    "Hugging Face",
-    "NLP",
-  ],
-  "Databases & Cloud": ["MySQL", "MongoDB", "Firebase", "Microsoft Azure"],
-  Tools: ["Git", "GitHub", "Postman", "VS Code", "Jupyter Notebook"],
-  "Core CS": ["DSA", "OOP", "DBMS", "Operating Systems", "REST APIs"],
-};
+export const skillsData = [
+  {
+    category: "Programming",
+    iconName: "Code2",
+    items: ["C++", "Java", "Python", "JavaScript", "TypeScript"],
+  },
+  {
+    category: "AI & Machine Learning",
+    iconName: "BrainCircuit",
+    items: ["Deep Learning", "TensorFlow", "Keras", "Scikit-learn", "NLP", "Hugging Face"],
+  },
+  {
+    category: "Data Science",
+    iconName: "Database",
+    items: ["Pandas", "NumPy", "Matplotlib", "Time Series Analysis", "Data Engineering"],
+  },
+  {
+    category: "Web Development",
+    iconName: "Globe",
+    items: ["React", "Next.js", "Node.js", "Express.js", "Spring Boot", "Tailwind CSS"],
+  },
+  {
+    category: "Cloud & Infrastructure",
+    iconName: "Cloud",
+    items: ["MySQL", "MongoDB", "Firebase", "Microsoft Azure"],
+  },
+  {
+    category: "Core & Tools",
+    iconName: "Wrench",
+    items: ["Git/GitHub", "REST APIs", "DSA", "System Design", "VS Code"],
+  }
+];
 
 export const certifications = [
   {

@@ -30,14 +30,15 @@ export const metadata: Metadata = {
     template: "%s · Sneh Prasad",
   },
   description:
-    "Portfolio of Sneh Prasad — AI/ML engineer and full-stack developer specializing in predictive maintenance, deep learning, and production-ready web applications.",
+    "Portfolio of Sneh Prasad — AI/ML engineer and full-stack developer specializing in building intelligent, scalable software and robust machine learning pipelines.",
   keywords: [
     "Sneh Prasad",
     "AI/ML Engineer",
     "Full-Stack Developer",
     "Machine Learning",
-    "Predictive Maintenance",
+    "Deep Learning",
     "Next.js Developer",
+    "Software Engineer",
     "SRM Institute",
   ],
   authors: [{ name: "Sneh Prasad", url: SITE_URL }],
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "Sneh Prasad — AI/ML Engineer & Full-Stack Developer",
     description:
-      "AI/ML engineer and full-stack developer specializing in predictive maintenance, deep learning, and production-ready web applications.",
+      "AI/ML engineer and full-stack developer specializing in building intelligent, scalable software and robust machine learning pipelines.",
     siteName: "Sneh Prasad",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
@@ -55,11 +56,23 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sneh Prasad — AI/ML Engineer & Full-Stack Developer",
     description:
-      "AI/ML engineer and full-stack developer specializing in predictive maintenance, deep learning, and production-ready web applications.",
+      "AI/ML engineer and full-stack developer specializing in building intelligent, scalable software and robust machine learning pipelines.",
     images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.ico" },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sneh Prasad",
+  jobTitle: "AI/ML Engineer & Full-Stack Developer",
+  url: SITE_URL,
+  sameAs: [
+    "https://github.com/spsneh07",
+    "https://www.linkedin.com/in/sneh-prasad",
+  ],
 };
 
 export default function RootLayout({
@@ -69,6 +82,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-base font-body antialiased">
         <ScrollProgress />
         <Navbar />
