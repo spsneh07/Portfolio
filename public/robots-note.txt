@@ -1,0 +1,1 @@
+robots.txt and sitemap.xml are generated dynamically by app/robots.ts and app/sitemap.ts
