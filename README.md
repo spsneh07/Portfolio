@@ -4,7 +4,7 @@
     <strong>Building intelligent, scalable software and robust machine learning pipelines.</strong>
   </p>
   <p>
-    <a href="https://snehprasad.dev"><img src="https://img.shields.io/badge/Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" /></a>
+    <a href="https://portfolio-navy-nu-49.vercel.app/"><img src="https://img.shields.io/badge/Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" /></a>
     <a href="https://github.com/spsneh07/Portfolio/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License" /></a>
     <img src="https://img.shields.io/github/stars/spsneh07/Portfolio?style=for-the-badge&color=yellow" alt="Stars" />
     <img src="https://img.shields.io/github/last-commit/spsneh07/Portfolio?style=for-the-badge&color=success" alt="Last Commit" />
