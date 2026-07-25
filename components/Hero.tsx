@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-grad-hero"
+      className="relative min-h-[100svh] flex flex-col justify-center pt-28 pb-10 overflow-hidden bg-grad-hero"
     >
       {/* ambient particles */}
       <div className="pointer-events-none absolute inset-0 -z-10">
