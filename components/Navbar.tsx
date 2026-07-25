@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, BrainCircuit } from "lucide-react";
 
 const LINKS = [
   { href: "#about", label: "About" },
@@ -20,8 +20,8 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="mx-auto max-w-6xl px-6 sm:px-8 mt-4">
         <div className="glass rounded-2xl px-5 py-3 flex items-center justify-between">
-          <a href="#top" className="font-display text-sm tracking-wide text-ink">
-            SP<span className="text-signal">.</span>
+          <a href="#top" className="flex items-center text-ink hover:text-signal transition-colors" aria-label="Home">
+            <BrainCircuit size={24} className="text-signal" />
           </a>
 
           <div className="hidden md:flex items-center gap-7">
