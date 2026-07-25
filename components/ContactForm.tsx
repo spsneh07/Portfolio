@@ -7,16 +7,42 @@ import { profile } from "@/lib/data";
 
 export function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
-    const body = encodeURIComponent(
-      `${form.message}\n\n— ${form.name} (${form.email})`
-    );
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
-    setSent(true);
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setErrorMessage(result.message || "Something went wrong.");
+      }
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage("Failed to send message. Please try again.");
+    }
   }
 
   return (
@@ -92,13 +118,25 @@ export function ContactForm() {
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.97 }}
             type="submit"
-            className="inline-flex items-center gap-2 rounded-full bg-indigo text-white px-5 py-2.5 text-sm font-medium shadow-glow hover:bg-indigo-bright transition-colors"
+            disabled={status === "submitting"}
+            className="inline-flex items-center gap-2 rounded-full bg-indigo text-white px-5 py-2.5 text-sm font-medium shadow-glow hover:bg-indigo-bright transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Send message <Send size={15} />
+            {status === "submitting" ? (
+              "Sending..."
+            ) : (
+              <>
+                Send message <Send size={15} />
+              </>
+            )}
           </motion.button>
-          {sent && (
-            <p className="text-xs text-signal">
-              Opening your email client — send when you&apos;re ready.
+          {status === "success" && (
+            <p className="text-xs text-emerald-500">
+              Message sent successfully! I&apos;ll get back to you soon.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="text-xs text-red-500">
+              {errorMessage}
             </p>
           )}
         </motion.form>
