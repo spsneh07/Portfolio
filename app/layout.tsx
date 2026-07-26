@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { BackToTop } from "@/components/BackToTop";
 import { Analytics } from "@vercel/analytics/react";
+import { Cursor } from "@/components/Cursor";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -90,6 +91,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-base font-body antialiased">
+        <Cursor />
         <ScrollProgress />
         <Navbar />
         <main>{children}</main>

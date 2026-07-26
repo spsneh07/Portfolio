@@ -38,6 +38,7 @@ export function ProjectCard({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ y: -4 }}
+      data-cursor="card"
       className="glass rounded-2xl overflow-hidden flex flex-col group border border-border hover:border-white/20 transition-all duration-300"
     >
       <div className="h-36 relative flex items-center justify-center bg-gradient-to-br from-surface-2 to-surface border-b border-border overflow-hidden">

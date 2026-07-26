@@ -54,7 +54,8 @@ export function Skills() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: i * 0.08 + j * 0.03 }}
-                    className="text-xs font-mono px-3 py-1.5 rounded-full bg-surface-2 border border-border text-muted hover:border-indigo-bright/60 hover:text-ink transition-all cursor-default"
+                    data-cursor="link"
+                    className="text-xs font-mono px-3 py-1.5 rounded-full bg-surface-2 border border-border text-muted hover:border-indigo-bright/60 hover:text-ink transition-all cursor-pointer"
                   >
                     {s}
                   </motion.span>

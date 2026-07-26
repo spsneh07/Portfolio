@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, BrainCircuit } from "lucide-react";
+import { useMagnetic } from "@/hooks/useMagnetic";
 
 const LINKS = [
   { href: "#about", label: "About" },
@@ -13,6 +14,24 @@ const LINKS = [
   { href: "#contact", label: "Contact" },
 ];
 
+function MagneticLink({ href, children, className, ariaLabel }: { href: string; children: React.ReactNode; className?: string; ariaLabel?: string }) {
+  const ref = useMagnetic<HTMLAnchorElement>();
+  return (
+    <a ref={ref} href={href} className={className} aria-label={ariaLabel}>
+      {children}
+    </a>
+  );
+}
+
+function MagneticButton({ onClick, children, className, ariaLabel, ariaExpanded }: { onClick: () => void; children: React.ReactNode; className?: string; ariaLabel?: string; ariaExpanded?: boolean }) {
+  const ref = useMagnetic<HTMLButtonElement>();
+  return (
+    <button ref={ref} onClick={onClick} className={className} aria-label={ariaLabel} aria-expanded={ariaExpanded}>
+      {children}
+    </button>
+  );
+}
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -20,30 +39,30 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="mx-auto max-w-6xl px-6 sm:px-8 mt-4">
         <div className="glass rounded-2xl px-5 py-3 flex items-center justify-between">
-          <a href="#top" className="flex items-center text-ink hover:text-signal transition-colors" aria-label="Home">
+          <MagneticLink href="#top" className="flex items-center text-ink hover:text-signal transition-colors p-1" ariaLabel="Home">
             <BrainCircuit size={24} className="text-signal" />
-          </a>
+          </MagneticLink>
 
           <div className="hidden md:flex items-center gap-7">
             {LINKS.map((l) => (
-              <a
+              <MagneticLink
                 key={l.href}
                 href={l.href}
-                className="text-sm text-muted hover:text-ink transition-colors"
+                className="text-sm text-muted hover:text-ink transition-colors px-2 py-1"
               >
                 {l.label}
-              </a>
+              </MagneticLink>
             ))}
           </div>
 
-          <button
-            className="md:hidden text-ink"
+          <MagneticButton
+            className="md:hidden text-ink p-1"
             onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
-            aria-expanded={open}
+            ariaLabel="Toggle menu"
+            ariaExpanded={open}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          </MagneticButton>
         </div>
 
         <AnimatePresence>

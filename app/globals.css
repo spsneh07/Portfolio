@@ -97,3 +97,11 @@ textarea:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* Hide default cursor on devices with a fine pointer (mouse/trackpad) */
+@media (pointer: fine) {
+  body, 
+  body * {
+    cursor: none;
+  }
+}
