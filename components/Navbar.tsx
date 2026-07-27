@@ -39,7 +39,7 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="mx-auto max-w-6xl px-6 sm:px-8 mt-4">
         <div className="glass rounded-2xl px-5 py-3 flex items-center justify-between">
-          <MagneticLink href="#top" className="flex items-center text-ink hover:text-signal transition-colors p-1" ariaLabel="Home">
+          <MagneticLink href="https://snehprasad.vercel.app/" className="flex items-center text-ink hover:text-signal transition-colors p-1" ariaLabel="Home">
             <BrainCircuit size={24} className="text-signal" />
           </MagneticLink>
 
@@ -78,8 +78,18 @@ export function Navbar() {
                   <a
                     key={l.href}
                     href={l.href}
-                    onClick={() => setOpen(false)}
-                    className="text-sm text-muted hover:text-ink transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setOpen(false);
+                      const target = document.querySelector(l.href);
+                      if (target) {
+                        // Small delay to allow menu animation to start before scrolling
+                        setTimeout(() => {
+                          target.scrollIntoView({ behavior: "smooth" });
+                        }, 50);
+                      }
+                    }}
+                    className="text-sm text-muted hover:text-ink transition-colors block"
                   >
                     {l.label}
                   </a>
