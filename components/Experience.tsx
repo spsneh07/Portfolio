@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import { experience } from "@/lib/data";
-import { Briefcase, Building2, MapPin, Code2, BrainCircuit, CheckCircle2 } from "lucide-react";
+import { Building2, MapPin, Code2, BrainCircuit, CheckCircle2, Smartphone } from "lucide-react";
 
 export function Experience() {
   return (
@@ -13,10 +13,11 @@ export function Experience() {
         title="Where I've worked"
         description="Building intelligent pipelines and shipping full-stack products."
       />
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {experience.map((e, i) => {
           const isAI = e.role.includes("AI") || e.role.includes("Machine");
-          const RoleIcon = isAI ? BrainCircuit : Code2;
+          const isFlutter = e.role.includes("Flutter") || e.role.includes("Mobile");
+          const RoleIcon = isAI ? BrainCircuit : isFlutter ? Smartphone : Code2;
 
           return (
             <motion.div
@@ -40,7 +41,7 @@ export function Experience() {
                       {e.role}
                     </h3>
                   </div>
-                  
+
                   <div className="ml-14 flex flex-col gap-1.5 mt-2">
                     <div className="flex items-center gap-2 text-sm text-muted">
                       <Building2 size={14} className="text-muted/60" />
