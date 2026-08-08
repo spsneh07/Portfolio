@@ -82,18 +82,29 @@ export const projects = [
     image: "gradient-3",
   },
   {
-    title: "Machine Learning Fault Classification",
-    description: "A data-driven machine learning pipeline that analyzes multivariate sensor data to detect and categorize mechanical anomalies.",
-    problemSolved: "Replaced unreliable manual threshold-based monitoring with an automated system to proactively prevent unexpected equipment failures.",
+    title: "SynergyHub",
+    description: "SynergyHub is an AI-powered team formation and project collaboration platform that connects developers, designers, and innovators with suitable projects. It uses Google Gemini AI to match users with projects based on skills, availability, and experience while providing collaborative workspaces and professional networking features.",
+    problemSolved: "Finding suitable teammates for hackathons, startups, and collaborative projects is often difficult because skills, availability, and experience are scattered across different platforms. SynergyHub uses AI-assisted matching to help users discover suitable projects and teammates while providing the tools required to collaborate after a team is formed.",
     features: [
-      "Conducted rigorous Exploratory Data Analysis (EDA) and data visualization",
-      "Engineered ensemble classification models (Random Forest, Gradient Boosting)",
-      "Processed and cleaned time-series sensor datasets for optimal model training"
+      "Gemini-powered AI matching for connecting users with suitable projects based on skills, availability, and experience.",
+      "Collaborative team workspaces for task management, communication, and resource sharing.",
+      "Advanced user profiles with profile photos, social links, skill verification, and expert/learner modes.",
+      "Networking system with connection requests, profiles, and chat functionality.",
+      "Secure authentication using NextAuth.js with Google OAuth and credentials-based login with bcrypt password hashing.",
+      "Fully responsive mobile-first interface."
     ],
-    outcome: "Achieved 95%+ classification accuracy on validation datasets, establishing a robust framework for scalable industrial monitoring.",
-    tech: ["Python", "Scikit-learn", "NumPy", "Pandas"],
-    github: "https://github.com/spsneh07/Fault-Maintenance-System",
-    demo: "",
+    outcome: "Built a production-style full-stack collaboration platform combining generative AI, authentication, database-driven profiles, networking, and collaborative workflows in a single application.",
+    tech: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "MongoDB",
+      "NextAuth.js",
+      "Google Gemini API"
+    ],
+    github: "https://github.com/spsneh07/SynergyHub",
+    demo: "https://synergyhub-project.vercel.app",
     featured: true,
     status: "Completed",
     image: "gradient-1", // Placeholder for dynamic UI gradients
@@ -111,7 +122,7 @@ export const projects = [
     outcome: "Built a fully functional financial dashboard architecture demonstrating best practices in web security, performance optimization, and accessible UI design.",
     tech: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/spsneh07/unifiedbankingsystem",
-    demo: "",
+    demo: "https://unifiedbankingsystem.vercel.app/",
     featured: false,
     status: "Active Development",
     image: "gradient-2",
