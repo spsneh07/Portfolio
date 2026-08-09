@@ -90,7 +90,7 @@ export function Hero() {
 
         <motion.div
           variants={item}
-          className="mt-8 flex items-center justify-center gap-5 text-muted"
+          className="mt-8 flex items-center justify-center gap-5 text-muted relative z-10"
         >
           <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-ink transition-colors">
             <Github size={20} />
@@ -107,7 +107,7 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-[min(90vw,700px)] opacity-70">
+      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-[min(90vw,700px)] opacity-70 pointer-events-none">
         <SignalLine className="w-full h-16" />
       </div>
 
