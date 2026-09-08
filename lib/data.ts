@@ -164,6 +164,12 @@ export const skillsData = [
 
 export const certifications = [
   {
+    name: "SAP Certified Data Analyst",
+    issuer: "SAP",
+    issued: "September 2026",
+    url: "https://www.credly.com/badges/2727a89c-e411-4140-829a-6e47127fd045/public_url",
+  },
+  {
     name: "Microsoft Certified: Azure Data Fundamentals (DP-900)",
     issuer: "Microsoft",
     url: "https://learn.microsoft.com/api/credentials/share/en-us/SnehPrasad-6265/4170079B5B48D79C?sharingId=959D37FCF549BBDD",
